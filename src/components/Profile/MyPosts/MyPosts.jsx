@@ -4,7 +4,7 @@ import classes from "./MyPosts.module.css";
 const MyPosts = () => {
   return (
     <div>
-      <Post />
+      <Post message = "Hallo!"/>
     </div>
   );
 };

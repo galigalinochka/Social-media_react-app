@@ -1,11 +1,15 @@
 import React from 'react';
 import classes from "./Post.module.css";
 
-const Post = () => {
+const Post = (props) => {
   return (
-    <div className = { classes.item}>
-      
+    <div>
+      <div className = { classes.item }>
+        {props.message}
+      </div>
+      <div className = {classes.likes}>likes: {props.likesCount}</div>
     </div>
+    
   );
 };
 

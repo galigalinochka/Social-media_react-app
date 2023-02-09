@@ -1,14 +1,14 @@
 import React from 'react';
 import MyPosts from './MyPosts/MyPosts';
 import classes from "./Profile.module.css";
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 
-const Profile = () => {
+const Profile = (props) => {
+
   return (
     <div className={classes.content}>
-      <div>
-        <img src="https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg" />
-      </div>
-      <MyPosts />   
+      <ProfileInfo />
+      <MyPosts posts = {props.posts}/>   
     </div>
   );
 };

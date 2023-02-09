@@ -1,0 +1,12 @@
+.dialog {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+}
+
+.dialogName {
+  padding: 10px;
+}
+
+.dialogMessage {
+  padding: 10px;
+}

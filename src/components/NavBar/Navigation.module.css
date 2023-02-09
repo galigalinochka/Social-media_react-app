@@ -2,3 +2,14 @@
   grid-area: n;
   background-color: blue;
 }
+
+a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.link {
+  color: gold;
+  text-decoration: none;
+}

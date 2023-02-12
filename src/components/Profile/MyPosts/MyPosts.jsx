@@ -4,24 +4,26 @@ import Post from './Post/Post';
 //import PostData from "../../../index";
 
 const MyPosts = (props) => { 
+  let postsElements = props.posts.map(post => <Post message ={post.message} likesCount={post.likesCount} />);
 
+  let addPost = () => {
+    let text = 
+  }
 
-let postsElements = props.posts.map(post => <Post message ={post.message} likesCount={post.likesCount} />);
-
-   return (
-    <div className={classes.postBlock}>
-      <h3>My Posts</h3>
-      <div>
+    return (
+      <div className={classes.postBlock}>
+        <h3>My Posts</h3>
         <div>
-          <textarea></textarea>
+          <div>
+            <textarea></textarea>
+          </div>
+          <button onClick = {props.addPost}>Add post</button>
         </div>
-        <button>Add post</button>
+        <div className={classes.posts}>
+          {postsElements}
+        </div>
       </div>
-      <div className={classes.posts}>
-        {postsElements}
-      </div>
-    </div>
-  );
+    );
 };
 
 export default MyPosts;

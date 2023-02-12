@@ -1,4 +1,4 @@
-.nav {
+.navigation {
   grid-area: n;
   background-color: blue;
 }
@@ -13,3 +13,14 @@ a {
   color: gold;
   text-decoration: none;
 }
+
+.nav {
+  margin-bottom: 50px;
+}
+
+h3 {
+  text-align: center;
+}
+
+
+

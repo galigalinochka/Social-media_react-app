@@ -5,7 +5,7 @@ import Dialog from './Dialog/Dialog';
 
 const Dialogs = (props) => {
 
-  let dialogsElements =props.users.map(dialog => <Dialog name={dialog.name} id = {dialog.id} message = {dialog.message} />)
+  let dialogsElements =props.users.users.map(dialog => <Dialog name={dialog.name} id = {dialog.id} message = {dialog.message} />)
   
   return (
     <div className = {classes.dialogs}>

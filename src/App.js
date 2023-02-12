@@ -7,24 +7,20 @@ import Dialogs from './components/Dialogs/Dialogs';
 import Profile from './components/Profile/Profile';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import News from './components/News/News';
-//import {users, PostData} from './index';
 
 const App = (props) => {
-  
   return (
     <BrowserRouter>
       <div className="app-wrapper">
       <Header />
-      <Navigation />
-      
+      <Navigation friends = {props.state.sideBar}/>
       <div className = "content">
       <Routes>
-        <Route path="/dialogs" element ={<Dialogs users = {props.users}/>} />
-        <Route path="/profile" element ={<Profile posts = {props.posts}/>} />
-        <Route path="/news" element ={<News/>} />
+        <Route path="/dialogs" element ={<Dialogs users = {props.state.messagesPage}/>} />
+        <Route path="/profile" element ={<Profile posts = {props.state.profilePage} addPost={props.addPost}/>} />
+        <Route path="/news" element ={<News/>} />       
       </Routes>
-      </div>
-      
+      </div>     
       <Footer />
     </div>
     </BrowserRouter>  

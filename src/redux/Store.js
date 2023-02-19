@@ -1,3 +1,9 @@
+import DialogsReducer from './DialogsReducer';
+import SidebarReducer from './SidebarReducer';
+import ProfileReducer from './ProfileReducer';
+
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
+const SEND_MESSAGE = 'SEND-MESSAGE';
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
@@ -19,6 +25,7 @@ let store = {
         { id: "4", name: "Mark", message: "Uuuuuu" },
         { id: "5", name: "Mandarina", message: "Miyyyyy" }
       ],
+      newMessageBody:''
     },
     sideBar: {
       friends: [
@@ -40,21 +47,13 @@ let store = {
   },
 
   dispatch(action) {
-    if (action.type === ADD_POST) {
-      let newPost = { id: "5", message: this._state.profilePage.newPostText, likesCount: 0}
-      this._state.profilePage.postsData.push(newPost);
-      this._state.profilePage.newPostText = '';
-      this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_POST_TEXT) {
-      this._state.profilePage.newPostText = action.newText;
-      this._callSubscriber(this._state);
+
+    this._state.profilePage = ProfileReducer(this._state.profilePage, action);
+    this._state.messagesPage = DialogsReducer(this._state.messagesPage, action);
+    this._state.sideBar = SidebarReducer(this._state.sideBar, action);
+   
+    this._callSubscriber(this._state);
     }
-  } 
 }
 
-export const addPostActionCreator = () => ({ type: ADD_POST })
-
-export const updateNewPostTextActionCreator = (text) => 
-  ({type: UPDATE_NEW_POST_TEXT, newText: text}) 
- 
 export default store;

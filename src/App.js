@@ -16,7 +16,8 @@ const App = (props) => {
       <Navigation friends = {props.state.sideBar}/>
       <div className = "content">
       <Routes>
-        <Route path="/dialogs" element ={<Dialogs users = {props.state.messagesPage}/>} />
+        <Route path="/dialogs"
+               element ={<Dialogs store = { props.store }/>} />
         <Route path="/profile" element ={<Profile posts = {props.state.profilePage}
                dispatch={props.dispatch} />} />
         <Route path="/news" element ={<News/>} />       

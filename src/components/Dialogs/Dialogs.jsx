@@ -3,7 +3,6 @@ import classes from "./Dialogs.module.css";
 import Dialog from './Dialog/Dialog';
 
 const Dialogs = (props) => {
-  debugger;
   let state = props.messagesPage;
   let newMessageBody = state.newMessageBody;
   
@@ -21,7 +20,8 @@ const Dialogs = (props) => {
     <Dialog state = {state}
             name={dialog.name}
             id = {dialog.id}
-            message = {dialog.message} />)
+            message = {dialog.message}
+            key = { dialog.id } />)
   
   return (
     <div className = {classes.dialogs}>

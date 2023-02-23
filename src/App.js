@@ -8,17 +8,17 @@ import Profile from './components/Profile/Profile';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import News from './components/News/News';
 
-const App = (props) => {
+const App = () => {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
       <Header />
-      <Navigation friends = {props.state.sideBar}/>
+      <Navigation />
       <div className = "content">
       <Routes>
         <Route path="/dialogs"
-               element ={<DialogsContainer store = { props.store }/>} />
-        <Route path="/profile" element ={<Profile store = { props.store } />} />
+               element ={<DialogsContainer />} />
+        <Route path="/profile" element ={<Profile />} />
         <Route path="/news" element ={<News/>} />       
       </Routes>
       </div>     

@@ -2,11 +2,6 @@ import DialogsReducer from './DialogsReducer';
 import SidebarReducer from './SidebarReducer';
 import ProfileReducer from './ProfileReducer';
 
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
-const SEND_MESSAGE = 'SEND-MESSAGE';
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-
 let store = {
   _state: {
     profilePage: {
@@ -47,10 +42,10 @@ let store = {
   },
 
   dispatch(action) {
-
+    console.log(this);
     this._state.profilePage = ProfileReducer(this._state.profilePage, action);
     this._state.messagesPage = DialogsReducer(this._state.messagesPage, action);
-    this._state.sideBar = SidebarReducer(this._state.sideBar, action);
+    this._state.sideBar = SidebarReducer(this._state.sideBar);
    
     this._callSubscriber(this._state);
     }
